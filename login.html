@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <title>Sip Arsip - UM</title>
 </head>
 
@@ -23,11 +23,18 @@
 
         <!-- Username -->
         <label for="username" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Username</label>
-        <input type="text" id="username" name="username" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm font-normal tracking-wide">
+        <input type="text" id="username" name="username" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
 
         <!-- Password -->
-        <label for="password" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Password</label>
-        <input type="password" id="password" name="password" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm font-normal tracking-wide">
+        <div class="relative">
+            <label for="password" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Password</label>
+            <div class="relative flex items-center">
+                <input type="password" id="password" name="password" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+                <span class="absolute flex items-center top-2.5 right-3 pr-0.5">
+                    <i id="visibilityIcon" class="material-icons-round cursor-pointer text-gray-500" style="font-size: 19px;" onclick="togglePasswordVisibility()">visibility</i>
+                </span>
+            </div>
+        </div>
 
         <!-- Ingat Saya -->
         <div class="flex items-center justify-start mb-4">
@@ -51,6 +58,21 @@
     <footer class="pt-6 mb-1 text-center">
         <p class="text-sm text-stone-900">&copy; 2023 Sip Arsip. All rights reserved.</p>
     </footer>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var visibilityIcon = document.getElementById("visibilityIcon");
+    
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                visibilityIcon.textContent = "visibility_off";
+            } else {
+                passwordInput.type = "password";
+                visibilityIcon.textContent = "visibility";
+            }
+        }
+    </script>
 </body>
 
 </html>
