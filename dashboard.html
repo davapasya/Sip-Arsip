@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <title>Sip Arsip - Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <title>Sip Arsip - Data Surat Register Keluar</title>
 </head>
 
-<body class="bg-gray-50 h-screen flex">
+<body class="bg-gray-50 flex overflow-y-auto">
     <!-- Sidebar -->
-    <div class="bg-gray-50 w-64 py-4 px-6 flex flex-col items-center border-r">
+    <div id="mySidebar" class="bg-gray-50 w-64 py-4 px-6 flex flex-col items-center border-r top-0 h-screen">
         <!-- Logo -->
         <div class="mb-6">
             <img class="mx-auto mt-2 mb-1 w-24 h-auto" src="Images/Sip Arsip.svg" alt="Logo">
@@ -41,74 +40,88 @@
             <a href="registerkeluar.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">assignment</i>Surat Register Keluar
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-20 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="bukuagenda.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-20 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">event_note</i>Buku Agenda
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="editprofile.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">person</i>Edit Profil
             </a>
-            <a href="login.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="login.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">exit_to_app</i>Keluar
             </a>
         </nav>
           
     </div>
 
-<!-- Main Content -->
-<div class="flex-1 flex flex-col overflow-hidden font-Poppins relative mt-2 mx-2">
-    <!-- Top Bar -->
-    <header class="bg-gray-50">
-        <div class="container flex items-center justify-between px-4 py-2">
-            <!-- Selamat Datang dan Foto Profil -->
-            <div class="flex items-center text-left mb-1">
-                <div>
-                    <p class="text-stone-900 font-medium tracking-wide text-base">Selamat Datang</p>
-                    <p class="text-sm tracking-wide text-gray-500 leading-3">Agus Salim, S.Sos., M.M</p>
-                </div>               
+    <!-- Main Content -->
+    <div id="myMaincontent" class="flex-1 flex flex-col overflow-hidden font-Poppins relative my-2 mx-2">
+        <!-- Top Bar -->
+        <header class="bg-gray-50">
+            <div class="container flex items-center justify-between px-4 py-2">
+                <!-- Selamat Datang dan Foto Profil -->
+                <div class="flex items-center text-left mb-1">
+                    <div>
+                        <p class="text-stone-900 font-medium tracking-wide text-base">Selamat Datang</p>
+                        <p class="text-sm tracking-wide text-gray-500 leading-3">Agus Salim, S.Sos., M.M</p>
+                    </div>               
+                </div>
+
+                <!-- Fitur Pencarian -->
+                <div class="flex items-center">
+                    <input type="text" placeholder="Cari berkas" class="text-base text-gray-500 tracking-wide placeholder-gray-300 bg-transparent focus:outline-none">
+                    <i class="material-icons-round text-gray-500 cursor-pointer" style="font-size: 21px;">search</i>
+                </div>
             </div>
-
-            <!-- Fitur Pencarian -->
-            <div class="flex items-center">
-                <input type="text" placeholder="Cari berkas" class="text-base text-gray-500 tracking-wide placeholder-gray-300 bg-transparent focus:outline-none">
-                <i class="material-icons-round text-gray-500 cursor-pointer" style="font-size: 21px;">search</i>
-            </div>
-        </div>
-    </header>
-
-    <!-- Dashboard -->
-<div class="flex flex-col px-4 py-6">
-    <h2 class="text-stone-900 font-medium text-xl tracking-wide mb-4">Dashboard</h2>
-
-    <div class="flex justify-start">
-        <!-- Rectangle for Surat Masuk -->
-        <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
-            <a href="suratmasuk.html"><h3 class="text-xl font-medium tracking-wide text-stone-900">Surat Masuk</h3></a>
-            <p class="text-4xl font-medium text-blue-500">10</p>
-        </div>
+        </header>
+        <!-- Dashboard -->
+        <div class="flex flex-col px-4 py-6">
+            <h2 class="text-stone-900 font-medium text-xl tracking-wide mb-4">Dashboard</h2>
     
-        <!-- Rectangle for Surat Keluar -->
-        <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
-            <a href=""><h3 class="text-xl font-medium tracking-wide text-stone-900">Surat Keluar</h3></a>
-            <p class="text-4xl font-medium text-blue-500">5</p>
-        </div>
+            <div class="flex justify-start">
+                <!-- Rectangle for Surat Masuk -->
+                <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
+                    <a href="suratmasuk.html"><h3 class="text-xl font-medium tracking-wide text-stone-900">Surat Masuk</h3></a>
+                    <p class="text-4xl font-medium text-blue-500">10</p>
+                </div>
+        
+                <!-- Rectangle for Surat Keluar -->
+                <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
+                    <a href=""><h3 class="text-xl font-medium tracking-wide text-stone-900">Surat Keluar</h3></a>
+                    <p class="text-4xl font-medium text-blue-500">5</p>
+                </div>
+        
+                <!-- Rectangle for Arsip Dipinjam -->
+                <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
+                    <a href=""><h3 class="text-xl font-medium tracking-wide text-stone-900">Arsip Dipinjam</h3></a>
+                    <p class="text-4xl font-medium text-blue-500">3</p>
+                </div>
     
-        <!-- Rectangle for Arsip Dipinjam -->
-        <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
-            <a href=""><h3 class="text-xl font-medium tracking-wide text-stone-900">Arsip Dipinjam</h3></a>
-            <p class="text-4xl font-medium text-blue-500">3</p>
+                <!-- Rectangle for Jadwal Retensi -->
+                <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
+                    <a href=""><h3 class="text-xl font-medium tracking-wide text-stone-900">Jadwal Retensi</h3></a>
+                    <p class="text-4xl font-medium text-blue-500">5</p>
+                </div>
+            </div>                        
         </div>
-
-        <!-- Rectangle for Jadwal Retensi -->
-        <div class="w-48 h-21 border-2 border-blue-500 rounded-md p-4 mr-8">
-            <a href=""><h3 class="text-xl font-medium tracking-wide text-stone-900">Jadwal Retensi</h3></a>
-            <p class="text-4xl font-medium text-blue-500">5</p>
-        </div>
-    </div>
-</div>
-    <!-- Footer -->
-<footer class="text-stone-900 text-sm text-left ml-4 mb-5 absolute bottom-0 left-0 w-full bg-gray-50">
+            <!-- Footer -->
+<footer class="text-stone-900 text-sm text-left ml-4 mb-4 absolute bottom-0 left-0 w-full bg-gray-50">
     &copy; 2023 Sip Arsip. All rights reserved.
 </footer>
+    </div>
+
+<!-- JavaScript -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var sidebar = document.getElementById('mySidebar');
+
+        window.addEventListener('scroll', function () {
+            var shouldFix = window.scrollY > 0;
+            
+            sidebar.style.position = shouldFix ? 'sticky' : 'static';
+        });
+    });
+</script>    
 </body>
 
 </html>
