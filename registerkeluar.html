@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
-    <title>Sip Arsip - Data Surat Register Keluar</title>
+    <title>Sip Arsip - Data Surat Masuk</title>
 </head>
 
 <body class="bg-gray-50 flex overflow-y-auto">
     <!-- Sidebar -->
-    <div class="bg-gray-50 w-64 py-4 px-6 flex flex-col items-center border-r">
+    <div id="mySidebar" class="bg-gray-50 w-64 py-4 px-6 flex flex-col items-center border-r top-0 h-screen">
         <!-- Logo -->
         <div class="mb-6">
             <img class="mx-auto mt-2 mb-1 w-24 h-auto" src="Images/Sip Arsip.svg" alt="Logo">
@@ -34,26 +34,27 @@
             <a href="suratmasuk.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">mail</i>Surat Masuk
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="suratkeluar.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">send</i>Surat Keluar
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="registerkeluar.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">assignment</i>Surat Register Keluar
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-20 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="bukuagenda.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-20 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">event_note</i>Buku Agenda
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="editprofile.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">person</i>Edit Profil
             </a>
-            <a href="#" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
+            <a href="login.html" class="flex items-center block py-0.5 px-1 text-sm font-medium text-gray-500 tracking-wide rounded-md mb-2 hover:text-gray-700 focus:text-blue-500 transition duration-300 ease-in-out">
                 <i class="material-icons-round mr-4" style="font-size: 20px">exit_to_app</i>Keluar
             </a>
         </nav>
           
     </div>
+
     <!-- Main Content -->
-    <div class="flex-1 flex flex-col overflow-hidden font-Poppins relative mt-2 mx-2">
+    <div id="myMaincontent" class="flex-1 flex flex-col overflow-hidden font-Poppins relative mt-2 mx-2">
         <!-- Top Bar -->
         <header class="bg-gray-50">
             <div class="container flex items-center justify-between px-4 py-2">
@@ -71,22 +72,21 @@
                 </div>
             </div>
         </header>
-
-        <!-- Dashboard -->
+        <!-- Data Surat Masuk -->
         <div class="flex flex-col px-4 py-6">
             <div class="flex items-center justify-between mb-4">
-                <!-- Judul Data Surat Keluar -->
-                <h2 class="text-stone-900 font-medium text-xl tracking-wide">Data Surat Register Keluar</h2>
+                <!-- Judul Data Surat Masuk -->
+                <h2 class="text-stone-900 font-medium text-xl tracking-wide">Data Surat Masuk</h2>
 
                 <!-- Container untuk Kolom Pencarian -->
-                <div class="flex items-center w-96 h-9 border-2 border-gray-400 rounded-md bg-transparent focus-within:border-gray-500 transition duration-300">
+                <div class="flex items-center w-96 h-9 border-2 border-gray-400 rounded-md bg-transparent focus-within:border-gray-800 transition duration-300">
                     <!-- Logo Search dari Google Icons Rounded -->
                     <div class="flex items-center justify-center w-10 h-9">
                         <i class="material-icons-round text-gray-400 cursor-pointer" style="font-size: 20px;">search</i>
                     </div>
 
                     <!-- Kolom Pencarian -->
-                    <input type="text" placeholder="Cari surat register keluar" class="flex-1 text-sm text-gray-800 font-normal tracking-wide placeholder-gray-300 bg-transparent focus:outline-none">
+                    <input type="text" placeholder="Cari surat masuk" class="flex-1 text-sm text-gray-800 font-normal tracking-wide placeholder-gray-300 bg-transparent focus:outline-none">
 
                     <!-- Logo Filter dari Google Icons Rounded -->
                     <div class="flex items-center justify-center w-10 h-9">
@@ -96,7 +96,7 @@
             </div>
 
             <!-- Tabel -->
-            <div class="overflow-x-auto overflow-y-auto mt-1 max-w-full">
+            <div class="overflow-x-auto overflow-y-auto mt-2 max-w-full max-h-96">
                 <table class="min-w-full min-w-max border">
                     <thead class="bg-blue-500 text-white tracking-wide border font-normal">
                         <tr>
@@ -135,18 +135,33 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-        <!-- Tombol Tambah Data -->
-        <div class="flex items-center justify-start ml-4">
-        <button class="flex items-center bg-blue-500 text-white font-medium text-xs tracking-wide rounded-md px-4 py-2">
-            Tambah Data
-        </button>
+
+                <!-- Tombol Tambah Data -->
+                <div class="flex justify-start mt-4 items-center">
+                    <button class="flex items-center bg-blue-500 text-white font-medium text-xs tracking-wide rounded-md px-3 py-2">
+                        Tambah Data
+                    </button>
+                </div>                        
         </div>
         <!-- Footer -->
-        <footer class="text-stone-900 text-sm text-left ml-4 mb-5 absolute bottom-0 left-0 w-full bg-gray-50">
+        <footer class="text-stone-900 text-sm ml-4 mt-auto mb-5 text-left">
             &copy; 2023 Sip Arsip. All rights reserved.
         </footer>
     </div>
+
+<!-- JavaScript -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var sidebar = document.getElementById('mySidebar');
+
+        window.addEventListener('scroll', function () {
+            var shouldFix = window.scrollY > 0;
+            
+            sidebar.style.position = shouldFix ? 'sticky' : 'static';
+        });
+    });
+</script>    
 </body>
 
 </html>
