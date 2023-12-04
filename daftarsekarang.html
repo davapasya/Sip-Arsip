@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <title>Sip Arsip - Pendaftaran Akun</title>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen items-center justify-center font-Poppins">
+    <div class="bg-gray-50 rounded-lg border-2 border-blue-500 mt-2 py-8 px-5 text-center font-Poppins">
+        <!-- Logo -->
+        <img class="mx-auto mb-1 w-20 h-auto" src="Images/Logo Kab Malang.svg" alt="Logo">
+
+        <!-- Selamat Datang -->
+        <div class="text-stone-900 text-lg font-medium">Selamat Datang di Aplikasi Sip Arsip</div>
+
+        <!-- Silakan masukkan informasi pendaftaran -->
+        <div class="text-gray-500 text-sm font-normal mb-5 tracking-wide leading-4">Silakan masukkan informasi pendaftaran Anda</div>
+
+        <!-- Nama -->
+        <label for="nama" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" class="w-96 h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+
+        <!-- NIK -->
+        <label for="nik" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">NIK</label>
+        <input type="text" id="nik" name="nik" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+
+        <!-- Nomor WhatsApp -->
+        <label for="whatsapp" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Nomor WhatsApp</label>
+        <input type="text" id="whatsapp" name="whatsapp" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+
+        <!-- Buat Password -->
+        <label for="buatPassword" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Buat Password</label>
+        <input type="password" id="buatPassword" name="buatPassword" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-2 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+
+        <!-- Konfirmasi Password -->
+        <label for="konfirmasiPassword" class="block text-left text-stone-900 text-sm font-medium tracking-wide mb-0.5">Konfirmasi Password</label>
+        <input type="password" id="konfirmasiPassword" name="konfirmasiPassword" class="w-full h-9 border-2 border-gray-300 rounded-md px-3 mb-4 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+
+        <!-- Tombol Daftar -->
+        <button type="button" onclick="registerAccount()" class="w-full h-9 bg-blue-500 text-sm tracking-wide text-white rounded-md flex items-center justify-center mb-0.5 hover:bg-blue-600">
+            Daftar Sekarang
+        </button>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-6 mb-4 text-center">
+        <p class="text-sm text-stone-900">&copy; 2023 Sip Arsip. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function registerAccount() {
+            var nama = document.getElementById("nama").value;
+            var nik = document.getElementById("nik").value;
+            var whatsapp = document.getElementById("whatsapp").value;
+            var buatPassword = document.getElementById("buatPassword").value;
+            var konfirmasiPassword = document.getElementById("konfirmasiPassword").value;
+
+            // Validasi input di sini (misalnya cek panjang password, kesamaan konfirmasi password, dsb.)
+            if (buatPassword.length < 8) {
+                alert("Password harus memiliki minimal 8 karakter.");
+                return;
+            }
+
+            if (buatPassword !== konfirmasiPassword) {
+                alert("Konfirmasi Password tidak sesuai.");
+                return;
+            }
+
+            // Proses pendaftaran akun di sini (bisa menggunakan AJAX atau metode lainnya)
+            // ...
+
+            alert("Pendaftaran berhasil! Anda dapat masuk sekarang.");
+        }
+    </script>
+</body>
+
+</html>
