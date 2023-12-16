@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
-    <title>Sip Arsip - Data Surat Masuk</title>
+    <title>Sip Arsip - Tambah Data Surat Keluar</title>
 </head>
 
 <body class="bg-gray-50 flex overflow-y-auto">
@@ -72,11 +72,11 @@
                 </div>
             </div>
         </header>
-        <!-- Data Surat Masuk -->
-        <div class="flex flex-col px-4 py-6 bg-red-400">
+        <!-- Data Surat Keluar -->
+        <div class="flex flex-col px-4 py-6">
             <div class="flex items-center justify-between mb-4">
                 <!-- Judul Data Surat Masuk -->
-                <h2 class="text-stone-900 font-medium text-xl tracking-wide">Data Surat Masuk</h2>
+                <h2 class="text-stone-900 font-medium text-xl tracking-wide">Tambah Data Surat Keluar</h2>
 
                 <!-- Container untuk Kolom Pencarian -->
                 <div class="flex items-center w-96 h-9 border-2 border-gray-400 rounded-md bg-transparent focus-within:border-gray-800 transition duration-300">
@@ -86,7 +86,7 @@
                     </div>
 
                     <!-- Kolom Pencarian -->
-                    <input type="text" placeholder="Cari surat masuk" class="flex-1 text-sm text-gray-800 font-normal tracking-wide placeholder-gray-300 bg-transparent focus:outline-none">
+                    <input type="text" placeholder="Cari surat keluar" class="flex-1 text-sm text-gray-800 font-normal tracking-wide placeholder-gray-300 bg-transparent focus:outline-none">
 
                     <!-- Logo Filter dari Google Icons Rounded -->
                     <div class="flex items-center justify-center w-10 h-9">
@@ -94,44 +94,61 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tabel -->
-            <div class="overflow-x-auto overflow-y-auto mt-2 max-w-full max-h-96">
-                <table class="min-w-full min-w-max border">
-                    <thead class="bg-blue-500 text-white tracking-wide border font-normal">
-                        <tr>
-                            <th class="py-2 px-2 border text-center text-sm">No.</th>
-                            <th class="py-2 px-4 border text-center text-sm">Asal Surat</th>
-                            <th class="py-2 px-4 border text-center text-sm">Lampiran</th>
-                            <th class="py-2 px-4 border text-center text-sm">Tanggal Surat</th>
-                            <th class="py-2 px-4 border text-center text-sm">Perihal</th>
-                            <th class="py-2 px-4 border text-center text-sm">Tanggal Simpan</th>
-                            <th class="py-2 px-4 border text-center text-sm">Pengaturan</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200 border text-sm">
-                        <tr>
-                            <td class="py-2 px-2 border text-center">1</td>
-                            <td class="py-2 px-4 border text-center truncate">Kecamatan Singosari</td>
-                            <td class="py-2 px-4 border text-center truncate">2</td>
-                            <td class="py-2 px-4 border text-center truncate">13/11/2023</td>
-                            <td class="py-2 px-4 border text-center truncate">Undangan Sosialisasi Netralitas Pemilu</td>   
-                            <td class="py-2 px-4 border text-center">14/11/2023</td> 
-                            <td class="py-2 px-2 text-center" style="display: flex; align-items: center; justify-content: center;">
-                                <a href="#" class="text-white bg-blue-500 rounded-md text-xs font-bold tracking-wide px-4 py-0.5 mr-2">Edit</a>
-                                <a href="#" class="text-white bg-red-500 rounded-md text-xs font-bold tracking-wide px-4 py-0.5">Hapus</a>
-                            </td> 
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Kolom Nama -->
+            <div class="mb-4">
+                <label for="pengirim" class="text-stone-900 text-sm font-medium tracking-wide mb-0.5">Nama Pengirim</label>
+                <input type="text" placeholder="Masukkan nama pengirim" id="pengirim" name="pengirim" class="w-full h-9 border-2 border-gray-400 rounded-md px-3 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+            </div>
+            <!-- Kolom Nomor Surat -->
+            <div class="mb-4">
+                <label for="nomorRegister" class="text-stone-900 text-sm font-medium tracking-wide mb-0.5">Nomor Surat</label>
+                <input type="text" placeholder="Masukkan nomor surat" id="nomorRegister" name="nomorRegister" class="w-full h-9 border-2 border-gray-400 rounded-md px-3 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+            </div>
+            <!-- Tanggal Surat -->
+            <div class="flex flex-col mr-4 mb-3.5">
+                <label for="tanggalSurat" class="text-sm font-medium tracking-wide text-stone-900 mb-0.5">Tanggal Surat</label>
+                <div class="relative border-2 border-gray-400 rounded-md h-9 w-80 flex items-center transition-all duration-300 ease-in-out hover:border-gray-800 focus-within:border-gray-800">
+                    <input type="text" placeholder="dd/mm/yyyy" id="tanggalSurat" name="tanggalSurat" class="outline-none tracking-wide px-3 text-sm text-gray-500 flex-grow"/>
+                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                        <i class="material-icons-round text-gray-400" style="font-size: 18px;">date_range</i>
+                    </div>
+                </div>
+            </div>
+            <!-- Kolom Nama Penerima -->
+            <div class="mb-4">
+                <label for="namaPenerima" class="text-stone-900 text-sm font-medium tracking-wide mb-0.5">Nama Penerima</label>
+                <input type="text" placeholder="Masukkan nama penerima" id="namaPenerima" name="namaPenerima" class="w-full h-9 border-2 border-gray-400 rounded-md px-3 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
             </div>
 
-                <!-- Tombol Tambah Data -->
-                <div class="flex justify-start mt-4 items-center">
-                    <a href="inputsuratmasuk.html"><button class="flex items-center bg-blue-500 text-white font-medium text-xs tracking-wide rounded-md px-3 py-2">
-                        Tambah Data
-                    </button></a>
-                </div>                        
+            <!-- Kolom Isi Surat -->
+            <div class="mb-6">
+                <label for="isiSurat" class="text-stone-900 text-sm font-medium tracking-wide mb-0.5">Isi Surat</label>
+                <input type="text" placeholder="Masukkan isi surat" id="isiSurat" name="isiSurat" class="w-full h-9 border-2 border-gray-400 rounded-md px-3 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+            </div>
+            <!-- Tombol Upload dan Scan Dokumen -->
+            <div class="flex items-center mb-4">
+                <!-- Tombol Upload Dokumen -->
+                <button class="w-48 h-9 bg-green-500 hover:bg-green-600 text-white rounded-md px-3 text-sm font-normal tracking-wide transition focus:border-gray-800 focus:outline-none mr-4">
+                    Upload Dokumen
+                </button>
+                        
+                <!-- Tombol Scan Dokumen -->
+                <button class="w-48 h-9 bg-green-500 hover:bg-green-600 text-white rounded-md px-3 text-sm font-normal tracking-wide transition focus:border-gray-800 focus:outline-none">
+                    Scan Dokumen
+                </button>
+            </div>
+            <!-- Kolom Penanggung Jawab -->
+            <div class="mb-4">
+                <label for="penanggungJawab" class="text-stone-900 text-sm font-medium tracking-wide mb-0.5">Penanggung Jawab</label>
+                <input type="text" placeholder="Masukkan nama penanggung jawab" id="penanggungJawab" name="penanggungJawab" class="w-full h-9 border-2 border-gray-400 rounded-md px-3 text-sm text-stone-900 font-normal tracking-wide transition focus:border-gray-800 hover:border-gray-800 focus:outline-none">
+            </div>
+            <!-- Tombol Simpan dan Disposisi -->
+            <div class="flex items-center mb-20">
+                <!-- Tombol Simpan -->
+                <button class="w-40 h-9 bg-blue-500 hover:bg-blue-700 text-white rounded-md px-3 text-sm font-normal tracking-wide transition focus:border-gray-800 focus:outline-none mr-4">
+                    Simpan
+                </button>
+            </div>        
         </div>
         <!-- Footer -->
         <footer class="text-stone-900 text-sm ml-4 mt-auto mb-5 text-left">
