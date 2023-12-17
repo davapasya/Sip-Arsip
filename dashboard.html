@@ -11,7 +11,7 @@
 
 <body class="bg-gray-50 flex overflow-y-auto">
     <!-- Sidebar -->
-    <div id="mySidebar" class="bg-gray-50 w-64 py-4 px-6 flex flex-col items-center border-r top-0 h-screen">
+    <div id="mySidebar" class="bg-gray-50 w-64 py-4 px-6 flex flex-col items-center border-r top-0 h-screen hidden sm:flex">
         <!-- Logo -->
         <div class="mb-6">
             <img class="mx-auto mt-2 mb-1 w-24 h-auto" src="Images/Sip Arsip.svg" alt="Logo">
@@ -58,6 +58,9 @@
         <!-- Top Bar -->
         <header class="bg-gray-50">
             <div class="container flex items-center justify-between px-4 py-2">
+                <div id="openSidebarBtn" class="sm:hidden md:hidden absolute top-4 left-4 cursor-pointer" onclick="openSidebar()">
+                    <i class="material-icons-round text-gray-500 hover:text-blue-500 transition duration-300 ease-in-out" style="font-size: 26px;">sort</i>
+                </div>                
                 <!-- Selamat Datang dan Foto Profil -->
                 <div class="flex items-center text-left mb-2">
                     <div>
@@ -103,6 +106,9 @@
                 </div>
             </div>                        
         </div>
+        <div id="closeSidebarBtn" class="sm:hidden md:hidden absolute top-4 left-4 cursor-pointer hidden" onclick="closeSidebar()">
+            <i class="material-icons-round text-gray-500 hover:text-blue-500 transition duration-300 ease-in-out" style="font-size: 26px;">close</i>
+        </div>        
         <!-- Footer -->
         <footer class="text-stone-900 text-sm text-left ml-4 mb-3 absolute bottom-0 left-0 w-full bg-gray-50">
             &copy; 2023 Sip Arsip. All rights reserved.
@@ -112,15 +118,39 @@
 <!-- JavaScript -->
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var sidebar = document.getElementById('mySidebar');
+function openSidebar() {
+    var sidebar = document.getElementById('mySidebar');
+    var mainContent = document.getElementById('myMaincontent');
+    var closeBtn = document.getElementById('closeSidebarBtn');
+    var openBtn = document.getElementById('openSidebarBtn');
 
-        window.addEventListener('scroll', function () {
-            var shouldFix = window.scrollY > 0;
+    sidebar.classList.remove('hidden');
+    closeBtn.classList.remove('hidden');
+    openBtn.classList.add('hidden'); // Menyembunyikan tombol open sidebar
+}
+
+function closeSidebar() {
+    var sidebar = document.getElementById('mySidebar');
+    var mainContent = document.getElementById('myMaincontent');
+    var closeBtn = document.getElementById('closeSidebarBtn');
+    var openBtn = document.getElementById('openSidebarBtn');
+
+    sidebar.classList.add('hidden');
+    mainContent.style.transform = 'translateX(0)';
+    closeBtn.classList.add('hidden');
+    openBtn.classList.remove('hidden'); // Menampilkan kembali tombol open sidebar
+}
+
+    
+document.addEventListener('DOMContentLoaded', function () {
+    var sidebar = document.getElementById('mySidebar');
+
+    window.addEventListener('scroll', function () {
+        var shouldFix = window.scrollY > 0;
             
-            sidebar.style.position = shouldFix ? 'sticky' : 'static';
-        });
+        sidebar.style.position = shouldFix ? 'sticky' : 'static';
     });
+});
 </script>    
 </body>
 
